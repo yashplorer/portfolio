@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html ng-app="portfolio-app">
+	<head>
+		<title>Portfolio</title>
+		<link rel="stylesheet" type="text/css" href="global.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/angular.min.js"></script>
+		<script src="js/app.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				$("#info").hover(function() {
+					$("p").stop().animate({opacity: 0.3}, 'fast', 'linear');
+				}, function() {
+					$('p').stop().animate({opacity: 0}, 'fast', 'linear');
+				});
+			});
+		</script>
+	</head>
+	<body ng-controller="Lister">
+		<div class="scrollElement" id="scrollbar"></div>
+		<div class="scrollElement" id="scroll" onclick="scroll('up')"></div>
+		<div class="scrollElement" id="info"></div>
+		<ul>
+			<li ng-repeat="datum in data">
+				<div class="panel" style="background-image: url(img/bg/{{datum.bg}}.jpg)"></div>
+				<h1>{{datum.header}}</h1>
+				<p>{{datum.info}}</p>
+				<div id="content" style="background-image: url(content/{{datum.content}}.png)"></div>
+			</li>
+		</ul>
+		<div class="scrollElement" id="scroll" onclick="scroll('down')"
+			style="
+				-webkit-transform: rotate(180deg);
+				transform: rotate(180deg);
+				top: calc(100% - 100px);
+			" 
+		></div>
+	</body>
+</html>
