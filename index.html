@@ -6,15 +6,6 @@
 		<script src="js/jquery.min.js"></script>
 		<script src="js/angular.min.js"></script>
 		<script src="js/app.js"></script>
-		<script type="text/javascript">
-			$(document).ready(function(){
-				$("#info").hover(function() {
-					$("p").stop().animate({opacity: 0.3}, 'fast', 'linear');
-				}, function() {
-					$('p').stop().animate({opacity: 0}, 'fast', 'linear');
-				});
-			});
-		</script>
 	</head>
 	<body ng-controller="Lister">
 		<div class="scrollElement" id="scrollbar"></div>
