@@ -7,7 +7,7 @@
 		<script src="js/angular.min.js"></script>
 		<script src="js/app.js"></script>
 	</head>
-	<body ng-controller="Lister">
+	<body ng-controller="Lister" onkeydown="scroll('down')" onkeyup="scroll('up')">
 		<div class="scrollElement" id="scrollbar"></div>
 		<div class="scrollElement" id="scroll" onclick="scroll('up')"></div>
 		<div class="scrollElement" id="info"></div>
